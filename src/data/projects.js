@@ -22,7 +22,7 @@ export const projects = [
     level: "Intermediate",
     score: 84,
     status: "Live",
-    demoUrl: "https://demo-taskflow-pro.vercel.app",
+    demoUrl: "https://taskflow-pro-mmoreno.vercel.app/",
     repoUrl: "https://github.com/matiasmorenog/taskflow-pro",
     summary:
       "Task management interface with status filters, priority handling, and local persistence.",
