@@ -4,6 +4,10 @@
 
 Portfolio project built with React + Material UI to showcase frontend skills, component architecture, filtering logic, testing, and CI best practices.
 
+## Live Demo
+
+[Open Portfolio](https://react-skill-showcase.vercel.app/)
+
 ## Tech Stack
 
 - React 18
@@ -49,8 +53,6 @@ npm run dev
 
 ## Badge Setup
 
-Replace `matiasmorenog/react-skill-showcase` in the badge URL with your GitHub repository path.
-
-Example:
+Badge is configured for this repository:
 
 `https://github.com/matiasmorenog/react-skill-showcase/actions/workflows/ci.yml/badge.svg`

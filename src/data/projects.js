@@ -52,7 +52,7 @@ export const projects = [
     level: "Advanced",
     score: 95,
     status: "Live",
-    demoUrl: "https://tu-portfolio.vercel.app",
+    demoUrl: "https://react-skill-showcase.vercel.app/",
     repoUrl: "https://github.com/matiasmorenog/dev-portfolio-v2",
     summary:
       "Personal website focused on performance, accessibility, and technical storytelling.",
