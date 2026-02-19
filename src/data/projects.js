@@ -7,7 +7,7 @@ export const projects = [
     level: "Advanced",
     score: 92,
     status: "Live",
-    demoUrl: "https://demo-ecommerce-analytics.vercel.app",
+    demoUrl: "https://mmoreno-ecommerce-analytics.vercel.app/",
     repoUrl: "https://github.com/matiasmorenog/ecommerce-analytics",
     summary:
       "Interactive KPI dashboard with reusable widgets and advanced filtering for sales monitoring.",
