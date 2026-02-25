@@ -367,54 +367,6 @@ export default function PortfolioPage() {
               </Paper>
             </Box>
 
-            <Box
-              sx={{
-                display: "grid",
-                gap: 1,
-                gridTemplateColumns: {
-                  xs: "repeat(2, minmax(0, 1fr))",
-                  md: "repeat(3, minmax(0, 1fr))",
-                },
-              }}
-            >
-              <Box>
-                <Typography
-                  variant="caption"
-                  color="text.secondary"
-                  sx={{ fontWeight: 600 }}
-                >
-                  Total Projects
-                </Typography>
-                <Typography variant="h5" sx={{ fontWeight: 700 }}>
-                  {stats.total}
-                </Typography>
-              </Box>
-              <Box>
-                <Typography
-                  variant="caption"
-                  color="text.secondary"
-                  sx={{ fontWeight: 600 }}
-                >
-                  Live Projects
-                </Typography>
-                <Typography variant="h5" sx={{ fontWeight: 700 }}>
-                  {stats.live}
-                </Typography>
-              </Box>
-              <Box>
-                <Typography
-                  variant="caption"
-                  color="text.secondary"
-                  sx={{ fontWeight: 600 }}
-                >
-                  Avg Score
-                </Typography>
-                <Typography variant="h5" sx={{ fontWeight: 700 }}>
-                  {stats.avgScore}
-                </Typography>
-              </Box>
-            </Box>
-
             <Filters
               query={query}
               setQuery={setQuery}
