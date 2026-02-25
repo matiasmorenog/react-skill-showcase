@@ -1,8 +1,36 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 
 export const metadata = {
-  title: "React Skill Showcase",
-  description: "Portfolio project built with React + Material UI",
+  metadataBase: new URL("https://react-skill-showcase.vercel.app"),
+  title: "Matias Moreno | React Frontend Developer",
+  description:
+    "Frontend Developer specialized in React, JavaScript, UI architecture, and web performance. Experience in banking and product teams.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Matias Moreno | React Frontend Developer",
+    description:
+      "Portfolio focused on React frontend development, architecture, performance, and real project demos.",
+    url: "https://react-skill-showcase.vercel.app",
+    siteName: "Matias Moreno Portfolio",
+    type: "website",
+    images: [
+      {
+        url: "/og",
+        width: 1200,
+        height: 630,
+        alt: "Matias Moreno - React Frontend Developer portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Matias Moreno | React Frontend Developer",
+    description:
+      "Portfolio focused on React frontend development, architecture, performance, and real project demos.",
+    images: ["/og"],
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -24,45 +24,52 @@ const profile = {
   name: "Matias Adrian Moreno Gallo",
   role: "Frontend Developer specialized in React",
   tagline:
-    "I build business-focused React products with strong JavaScript foundations, high Web Performance, and reliable REST APIs integrations.",
+    "I build React products for business-critical environments with maintainable architecture, strong performance, and reliable REST API integrations.",
   location: "Argentina - Open to remote work",
   email: "matiasmorenog@gmail.com",
   github: "https://github.com/matiasmorenog",
   linkedin: "https://www.linkedin.com/in/matias-moreno/",
   resumeSource: "https://www.linkedin.com/in/matias-moreno/",
+  resumePdf: "/MatiasMoreno_resume.pdf",
 };
 
 const profileSummary = [
-  "Frontend Developer with over 10 years in software development and strong experience shipping web products for real business environments.",
-  "Focused on React architecture, reusable components, and JavaScript code quality that improves team velocity and product maintainability.",
-  "I work with REST APIs, responsive UI systems, and performance optimization to deliver reliable user experiences.",
-  "Currently open to remote opportunities where product impact and engineering standards matter.",
+  "Frontend Developer with 10+ years in software development, including 7+ years building production web products in fintech, SaaS, and internal platforms.",
+  "Delivered frontend solutions across 4 companies, with emphasis on React architecture, reusable component systems, and code quality that improves release confidence.",
+  "Focused on REST API integration, responsive UI systems, and web performance optimization for high-trust user journeys.",
+  "Open to remote opportunities where product impact and engineering standards are both first-class priorities.",
 ];
 
 const experienceHighlights = [
   {
-    role: "Frontend Web Developer - Santander Tecnologia Argentina",
+    role: "Frontend Web Developer",
+    company: "INE",
     period: "Mar 2022 - Jul 2025",
-    impact:
-      "Delivered production frontend features for banking flows, improving UI consistency and collaboration with backend and product teams.",
+    details: "Full-time · Remote",
   },
   {
-    role: "Software Developer - Genetrics",
+    role: "Software Developer",
+    company: "Santander Tecnologia Argentina",
     period: "Dec 2021 - Mar 2022",
-    impact:
-      "Built internal and client-facing modules with an emphasis on maintainable code and iterative delivery in short cycles.",
+    details: "Full-time · Hybrid · Buenos Aires, Argentina",
   },
   {
-    role: "Full Stack Developer - Envenue",
-    period: "Jul 2018 - Jun 2021",
-    impact:
-      "Implemented full-stack features end-to-end, contributing to stable releases and faster feature rollout across product areas.",
+    role: "Full Stack Developer",
+    company: "Genetrics",
+    period: "Jul 2021 - Sep 2021",
+    details: "Full-time · Buenos Aires, Argentina",
+  },
+  {
+    role: "Full-stack Developer",
+    company: "Envone",
+    period: "Jul 2015 - Jun 2021",
+    details: "CABA, Colegiales",
   },
 ];
 
 const educationHighlights = [
-  "Advanced Technician in Programming - Universidad Tecnologica Nacional (UTN)",
-  "Business Administration and Accounting - Colegio San Martin de Tours",
+  "Tecnico Superior en Programacion (Higher Technician in Programming) - Universidad Tecnologica Nacional (UTN)",
+  "Bachiller en Economia y Administracion (High School Diploma in Economics and Business Administration) - Colegio San Martin de Tours",
 ];
 
 const coreSkills = [
@@ -159,23 +166,12 @@ export default function PortfolioPage() {
     filteredProjects,
   } = useProjectFilters(projects);
 
-  const stats = useMemo(() => {
-    const total = filteredProjects.length;
-    const live = filteredProjects.filter((item) => item.status === "Live").length;
-    const avgScore =
-      total === 0
-        ? 0
-        : Math.round(
-            filteredProjects.reduce((acc, current) => acc + current.score, 0) / total
-          );
-
-    return { total, live, avgScore };
-  }, [filteredProjects]);
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box
+        component="main"
+        id="main-content"
         sx={{
           minHeight: "100vh",
           background: darkMode
@@ -186,7 +182,12 @@ export default function PortfolioPage() {
       >
         <Container maxWidth="lg">
           <Stack spacing={2}>
-            <Paper variant="outlined" sx={{ p: { xs: 2, md: 2.5 }, borderRadius: 1 }}>
+            <Paper
+              component="section"
+              aria-labelledby="hero-heading"
+              variant="outlined"
+              sx={{ p: { xs: 2, md: 2.5 }, borderRadius: 1 }}
+            >
               <Stack
                 direction={{ xs: "column", md: "row" }}
                 spacing={2}
@@ -219,6 +220,8 @@ export default function PortfolioPage() {
                       </Typography>
                       <Typography
                         variant="h3"
+                        component="h1"
+                        id="hero-heading"
                         sx={{ mt: 0.2, fontSize: { xs: "1.8rem", md: "2.6rem" } }}
                       >
                         {profile.name}
@@ -327,12 +330,12 @@ export default function PortfolioPage() {
                       size="small"
                       variant="outlined"
                       component="a"
-                      href={profile.resumeSource}
+                      href={profile.resumePdf}
                       endIcon={<OpenInNewRoundedIcon fontSize="small" />}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      CV on LinkedIn
+                      Download CV (PDF)
                     </Button>
                   </Stack>
                 </Box>
@@ -348,8 +351,12 @@ export default function PortfolioPage() {
                     {darkMode ? "Light Mode" : "Dark Mode"}
                   </Button>
 
-                  <Paper variant="outlined" sx={{ p: 1.4, borderRadius: 1 }}>
-                    <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+                  <Paper component="section" variant="outlined" sx={{ p: 1.4, borderRadius: 1 }}>
+                    <Typography
+                      component="h2"
+                      variant="subtitle2"
+                      sx={{ fontWeight: 700 }}
+                    >
                       Summary
                     </Typography>
                     {profileSummary.map((item) => (
@@ -367,7 +374,10 @@ export default function PortfolioPage() {
               </Stack>
             </Paper>
 
-            <Paper variant="outlined" sx={{ p: 1.5, borderRadius: 1 }}>
+            <Paper component="section" variant="outlined" sx={{ p: 1.5, borderRadius: 1 }}>
+              <Typography component="h2" variant="h6" sx={{ mb: 1 }}>
+                Core Skills
+              </Typography>
               <Stack direction="row" spacing={0.9} useFlexGap flexWrap="wrap">
                 {coreSkills.map((skill) => (
                   <Chip key={skill} label={skill} variant="outlined" />
@@ -376,6 +386,8 @@ export default function PortfolioPage() {
             </Paper>
 
             <Box
+              component="section"
+              aria-labelledby="experience-heading"
               sx={{
                 display: "grid",
                 gap: 1,
@@ -383,27 +395,27 @@ export default function PortfolioPage() {
               }}
             >
               <Paper variant="outlined" sx={{ p: 2, borderRadius: 1 }}>
-                <Typography variant="h6" sx={{ mb: 1 }}>
+                <Typography id="experience-heading" component="h2" variant="h6" sx={{ mb: 1 }}>
                   Experience Highlights
                 </Typography>
                 {experienceHighlights.map((item, index) => (
                   <Box key={item.role} sx={{ pt: index === 0 ? 0 : 1.2 }}>
                     {index > 0 ? <Divider sx={{ mb: 1.2 }} /> : null}
                     <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-                      {item.role}
+                      {item.role} - {item.company}
                     </Typography>
                     <Typography variant="caption" color="text.secondary">
                       {item.period}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" sx={{ mt: 0.4 }}>
-                      {item.impact}
+                      {item.details}
                     </Typography>
                   </Box>
                 ))}
               </Paper>
 
               <Paper variant="outlined" sx={{ p: 2, borderRadius: 1 }}>
-                <Typography variant="h6" sx={{ mb: 1 }}>
+                <Typography component="h2" variant="h6" sx={{ mb: 1 }}>
                   Education & Certifications
                 </Typography>
                 {educationHighlights.map((item) => (
@@ -421,32 +433,39 @@ export default function PortfolioPage() {
                   variant="outlined"
                   endIcon={<OpenInNewRoundedIcon fontSize="small" />}
                   component="a"
-                  href={profile.resumeSource}
+                  href={profile.resumePdf}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Open CV on LinkedIn
+                  Download CV (PDF)
                 </Button>
               </Paper>
             </Box>
 
-            <Filters
-              query={query}
-              setQuery={setQuery}
-              category={category}
-              setCategory={setCategory}
-              level={level}
-              setLevel={setLevel}
-              status={status}
-              setStatus={setStatus}
-              categories={categories}
-              levels={levels}
-              statusOptions={statusOptions}
-              onReset={resetFilters}
-            />
+            <Box component="section" aria-labelledby="projects-heading">
+              <Typography id="projects-heading" component="h2" variant="h6" sx={{ mb: 1 }}>
+                Projects
+              </Typography>
+              <Filters
+                query={query}
+                setQuery={setQuery}
+                category={category}
+                setCategory={setCategory}
+                level={level}
+                setLevel={setLevel}
+                status={status}
+                setStatus={setStatus}
+                categories={categories}
+                levels={levels}
+                statusOptions={statusOptions}
+                onReset={resetFilters}
+              />
+            </Box>
 
             <Box
               id="projects"
+              component="section"
+              aria-labelledby="projects-heading"
               sx={{
                 display: "grid",
                 gap: 1,

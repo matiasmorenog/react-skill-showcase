@@ -46,8 +46,8 @@ export default function Filters({
         flexWrap="wrap"
       >
         <TextField
-          label="Search"
-          placeholder="React, API, dashboard..."
+          label="Search projects"
+          placeholder="Search projects..."
           value={query}
           size="small"
           onChange={(event) => setQuery(event.target.value)}
@@ -70,7 +70,7 @@ export default function Filters({
           options={statusOptions}
         />
 
-        <Button variant="outlined" color="inherit" onClick={onReset}>
+        <Button variant="text" color="inherit" onClick={onReset}>
           Reset
         </Button>
       </Stack>

@@ -11,7 +11,7 @@ describe("App", () => {
 
     expect(screen.getByText("TaskFlow Pro")).toBeInTheDocument();
 
-    const searchInput = screen.getByLabelText("Search");
+    const searchInput = screen.getByLabelText("Search projects");
     await user.type(searchInput, "analytics");
 
     expect(screen.getByText("E-commerce Analytics")).toBeInTheDocument();
@@ -22,7 +22,7 @@ describe("App", () => {
     const user = userEvent.setup();
     render(<PortfolioPage />);
 
-    const searchInput = screen.getByLabelText("Search");
+    const searchInput = screen.getByLabelText("Search projects");
     await user.type(searchInput, "this should not match anything");
 
     expect(screen.getByText("No results found")).toBeInTheDocument();
@@ -32,7 +32,7 @@ describe("App", () => {
     const user = userEvent.setup();
     render(<PortfolioPage />);
 
-    const searchInput = screen.getByLabelText("Search");
+    const searchInput = screen.getByLabelText("Search projects");
     await user.type(searchInput, "analytics");
 
     expect(screen.queryByText("TaskFlow Pro")).not.toBeInTheDocument();

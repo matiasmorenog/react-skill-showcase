@@ -44,7 +44,7 @@ export default function ProjectCard({ project }) {
         </Typography>
 
         <Typography variant="body2" sx={{ mt: 1.1, fontWeight: 600 }}>
-          Impact: {project.impact}
+          Focus: {project.impact}
         </Typography>
 
         <Stack direction="row" spacing={0.8} useFlexGap flexWrap="wrap" sx={{ mt: 1.4 }}>
@@ -99,7 +99,7 @@ export default function ProjectCard({ project }) {
         </Box>
 
         <Typography variant="caption" color="text.secondary">
-          {project.category} • {project.score}/100
+          {project.category} • {project.scoreLabel ?? "Project score"}: {project.score}/100
         </Typography>
       </CardActions>
     </Card>
