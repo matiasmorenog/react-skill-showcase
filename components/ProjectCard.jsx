@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
@@ -19,18 +20,23 @@ export default function ProjectCard({ project }) {
     <Card variant="outlined" sx={{ borderRadius: 1, height: "100%" }}>
       {project.previewImage ? (
         <Box
-          component="img"
-          src={project.previewImage}
-          alt={project.previewAlt ?? `${project.title} preview`}
           sx={{
             width: "100%",
             height: 150,
-            objectFit: "cover",
             borderBottom: 1,
             borderColor: "divider",
-            display: "block",
+            position: "relative",
+            overflow: "hidden",
           }}
-        />
+        >
+          <Image
+            src={project.previewImage}
+            alt={project.previewAlt ?? `${project.title} preview`}
+            fill
+            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{ objectFit: "cover" }}
+          />
+        </Box>
       ) : null}
       <CardContent sx={{ pb: 1.2 }}>
         <Stack
