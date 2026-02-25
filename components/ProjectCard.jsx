@@ -43,6 +43,10 @@ export default function ProjectCard({ project }) {
           {project.summary}
         </Typography>
 
+        <Typography variant="body2" color="text.secondary" sx={{ mt: 0.9 }}>
+          My role: {project.role ?? "Not specified"}
+        </Typography>
+
         <Typography variant="body2" sx={{ mt: 1.1, fontWeight: 600 }}>
           Focus: {project.impact}
         </Typography>
