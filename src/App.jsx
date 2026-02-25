@@ -136,7 +136,7 @@ export default function App() {
           },
         },
       }),
-    [darkMode],
+    [darkMode]
   );
 
   const {
@@ -159,7 +159,7 @@ export default function App() {
       total === 0
         ? 0
         : Math.round(
-            filteredProjects.reduce((acc, current) => acc + current.score, 0) / total,
+            filteredProjects.reduce((acc, current) => acc + current.score, 0) / total
           );
 
     return { total, live, avgScore };
@@ -175,38 +175,89 @@ export default function App() {
             ? "radial-gradient(circle at 92% 3%, #264866 0%, #0e1320 55%)"
             : "radial-gradient(circle at 95% 5%, #ffe5bf 0%, #f4f1ea 50%, #dbe9ff 100%)",
           py: { xs: 2, md: 4 },
-        }}>
+        }}
+      >
         <Container maxWidth="lg">
           <Stack spacing={2}>
             <Paper variant="outlined" sx={{ p: { xs: 2, md: 2.5 }, borderRadius: 1 }}>
-              <Stack direction={{ xs: "column", md: "row" }} spacing={2} justifyContent="space-between">
+              <Stack
+                direction={{ xs: "column", md: "row" }}
+                spacing={2}
+                justifyContent="space-between"
+              >
                 <Box sx={{ maxWidth: 820 }}>
-                  <Typography variant="overline" color="primary.main" sx={{ fontWeight: 700, letterSpacing: 1.4 }}>
+                  <Typography
+                    variant="overline"
+                    color="primary.main"
+                    sx={{ fontWeight: 700, letterSpacing: 1.4 }}
+                  >
                     React Portfolio Hub
                   </Typography>
-                  <Typography variant="h3" sx={{ mt: 0.6, fontSize: { xs: "1.8rem", md: "2.6rem" } }}>
+                  <Typography
+                    variant="h3"
+                    sx={{ mt: 0.6, fontSize: { xs: "1.8rem", md: "2.6rem" } }}
+                  >
                     {profile.name}
                   </Typography>
                   <Typography variant="h6" color="text.secondary" sx={{ mt: 0.4 }}>
                     {profile.role}
                   </Typography>
-                  <Typography variant="body1" color="text.secondary" sx={{ mt: 1.2, maxWidth: 760 }}>
+                  <Typography
+                    variant="body1"
+                    color="text.secondary"
+                    sx={{ mt: 1.2, maxWidth: 760 }}
+                  >
                     {profile.tagline}
                   </Typography>
 
-                  <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ mt: 1.4 }}>
-                    <Chip size="small" color="primary" label="Available for freelance / full-time" />
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    useFlexGap
+                    flexWrap="wrap"
+                    sx={{ mt: 1.4 }}
+                  >
+                    <Chip
+                      size="small"
+                      color="primary"
+                      label="Available for freelance / full-time"
+                    />
                     <Chip size="small" variant="outlined" label={profile.location} />
                   </Stack>
 
-                  <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ mt: 1.5 }}>
-                    <Button size="small" variant="outlined" component="a" href={profile.github} target="_blank" rel="noreferrer">
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    useFlexGap
+                    flexWrap="wrap"
+                    sx={{ mt: 1.5 }}
+                  >
+                    <Button
+                      size="small"
+                      variant="outlined"
+                      component="a"
+                      href={profile.github}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       GitHub
                     </Button>
-                    <Button size="small" variant="outlined" component="a" href={profile.linkedin} target="_blank" rel="noreferrer">
+                    <Button
+                      size="small"
+                      variant="outlined"
+                      component="a"
+                      href={profile.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       LinkedIn
                     </Button>
-                    <Button size="small" variant="outlined" component="a" href={`mailto:${profile.email}`}>
+                    <Button
+                      size="small"
+                      variant="outlined"
+                      component="a"
+                      href={`mailto:${profile.email}`}
+                    >
                       Contact
                     </Button>
                     <Button
@@ -216,7 +267,8 @@ export default function App() {
                       component="a"
                       href={profile.resumeSource}
                       target="_blank"
-                      rel="noreferrer">
+                      rel="noreferrer"
+                    >
                       CV on LinkedIn
                     </Button>
                   </Stack>
@@ -226,7 +278,10 @@ export default function App() {
                   <Button
                     variant="outlined"
                     onClick={() => setDarkMode((prev) => !prev)}
-                    startIcon={darkMode ? <LightModeRoundedIcon /> : <DarkModeRoundedIcon />}>
+                    startIcon={
+                      darkMode ? <LightModeRoundedIcon /> : <DarkModeRoundedIcon />
+                    }
+                  >
                     {darkMode ? "Light Mode" : "Dark Mode"}
                   </Button>
 
@@ -235,7 +290,12 @@ export default function App() {
                       Summary
                     </Typography>
                     {profileSummary.map((item) => (
-                      <Typography key={item} variant="body2" color="text.secondary" sx={{ mt: 0.8, lineHeight: 1.45 }}>
+                      <Typography
+                        key={item}
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ mt: 0.8, lineHeight: 1.45 }}
+                      >
                         {item}
                       </Typography>
                     ))}
@@ -243,17 +303,6 @@ export default function App() {
                 </Stack>
               </Stack>
             </Paper>
-
-            <Box
-              sx={{
-                display: "grid",
-                gap: 1,
-                gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
-              }}>
-              <StatCard label="Visible Projects" value={stats.total} hint="Current filtered results" />
-              <StatCard label="Live Projects" value={stats.live} hint="Production-ready demos" />
-              <StatCard label="Average Score" value={`${stats.avgScore}%`} hint="Portfolio quality index" />
-            </Box>
 
             <Paper variant="outlined" sx={{ p: 1.5, borderRadius: 1 }}>
               <Stack direction="row" spacing={0.9} useFlexGap flexWrap="wrap">
@@ -268,7 +317,8 @@ export default function App() {
                 display: "grid",
                 gap: 1,
                 gridTemplateColumns: { xs: "1fr", md: "1.5fr 1fr" },
-              }}>
+              }}
+            >
               <Paper variant="outlined" sx={{ p: 2, borderRadius: 1 }}>
                 <Typography variant="h6" sx={{ mb: 1 }}>
                   Experience Highlights
@@ -294,7 +344,12 @@ export default function App() {
                   Education & Certifications
                 </Typography>
                 {educationHighlights.map((item) => (
-                  <Typography key={item} variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                  <Typography
+                    key={item}
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ mb: 1 }}
+                  >
                     {item}
                   </Typography>
                 ))}
@@ -305,7 +360,8 @@ export default function App() {
                   component="a"
                   href={profile.resumeSource}
                   target="_blank"
-                  rel="noreferrer">
+                  rel="noreferrer"
+                >
                   Open CV on LinkedIn
                 </Button>
               </Paper>
@@ -331,10 +387,17 @@ export default function App() {
               sx={{
                 display: "grid",
                 gap: 1,
-                gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" },
-              }}>
+                gridTemplateColumns: {
+                  xs: "1fr",
+                  sm: "repeat(2, 1fr)",
+                  lg: "repeat(3, 1fr)",
+                },
+              }}
+            >
               {filteredProjects.length > 0 ? (
-                filteredProjects.map((project) => <ProjectCard key={project.id} project={project} />)
+                filteredProjects.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))
               ) : (
                 <Paper variant="outlined" sx={{ p: 2, borderRadius: 1 }}>
                   <Typography variant="h6">No results found</Typography>

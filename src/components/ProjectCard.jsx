@@ -17,7 +17,12 @@ export default function ProjectCard({ project }) {
   return (
     <Card variant="outlined" sx={{ borderRadius: 1, height: "100%" }}>
       <CardContent sx={{ pb: 1.2 }}>
-        <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={1}>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          spacing={1}
+        >
           <Chip
             size="small"
             label={project.status}
@@ -48,10 +53,28 @@ export default function ProjectCard({ project }) {
         </Stack>
       </CardContent>
 
-      <CardActions sx={{ px: 2, pb: 2, pt: 0.6, display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: 1, borderColor: "divider" }}>
+      <CardActions
+        sx={{
+          px: 2,
+          pb: 2,
+          pt: 0.6,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          borderTop: 1,
+          borderColor: "divider",
+        }}
+      >
         <Box sx={{ display: "flex", gap: 1 }}>
           {project.demoUrl ? (
-            <Button size="small" variant="contained" component="a" href={project.demoUrl} target="_blank" rel="noreferrer">
+            <Button
+              size="small"
+              variant="contained"
+              component="a"
+              href={project.demoUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
               Live Demo
             </Button>
           ) : (
@@ -67,7 +90,8 @@ export default function ProjectCard({ project }) {
               component="a"
               href={project.repoUrl}
               target="_blank"
-              rel="noreferrer">
+              rel="noreferrer"
+            >
               Source Code
             </Button>
           ) : null}

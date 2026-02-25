@@ -11,7 +11,8 @@ function SelectField({ label, value, onChange, options }) {
       label={label}
       value={value}
       size="small"
-      onChange={(event) => onChange(event.target.value)}>
+      onChange={(event) => onChange(event.target.value)}
+    >
       {options.map((option) => (
         <MenuItem key={option} value={option}>
           {option}
@@ -41,7 +42,8 @@ export default function Filters({
         direction={{ xs: "column", md: "row" }}
         spacing={1.2}
         useFlexGap
-        flexWrap="wrap">
+        flexWrap="wrap"
+      >
         <TextField
           label="Search"
           placeholder="React, API, dashboard..."
