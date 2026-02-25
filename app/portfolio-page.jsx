@@ -71,7 +71,7 @@ const experienceHighlights = [
 ];
 
 const educationHighlights = [
-  "Higher Technician in Programming (Tecnico Superior en Programacion) - Universidad Tecnologica Nacional (UTN)",
+  "Associate Degree in Programming (Tecnico Superior en Programacion) - Universidad Tecnologica Nacional (UTN)",
   "High School Diploma in Economics and Business Administration (Bachiller en Economia y Administracion) - Colegio San Martin de Tours",
 ];
 
