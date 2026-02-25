@@ -1,5 +1,4 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
-import "./globals.css";
 
 export const metadata = {
   metadataBase: new URL("https://react-skill-showcase.vercel.app"),
@@ -38,6 +37,24 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <style>{`
+          .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 8px;
+            z-index: 2000;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: #0a7f78;
+            color: #ffffff;
+            font-family: sans-serif;
+            font-size: 14px;
+            text-decoration: none;
+          }
+          .skip-link:focus {
+            left: 8px;
+          }
+        `}</style>
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
