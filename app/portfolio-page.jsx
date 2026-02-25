@@ -12,6 +12,8 @@ import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import Avatar from "@mui/material/Avatar";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
@@ -35,10 +37,10 @@ const profile = {
 };
 
 const profileSummary = [
-  "Frontend Developer with 10+ years in software development, including 7+ years building production web products in fintech, SaaS, and internal platforms.",
-  "Delivered frontend solutions across 4 companies, with emphasis on React architecture, reusable component systems, and code quality that improves release confidence.",
-  "Focused on REST API integration, responsive UI systems, and web performance optimization for high-trust user journeys.",
-  "Open to remote opportunities where product impact and engineering standards are both first-class priorities.",
+  "Frontend Developer with 10+ years in software development.",
+  "Professional experience across 4 companies: INE, Santander Tecnologia Argentina, Genetrics, and Envone.",
+  "Focused on React, JavaScript, REST API integrations, component architecture, and responsive UI development.",
+  "Open to remote opportunities.",
 ];
 
 const experienceHighlights = [
@@ -123,6 +125,23 @@ export default function PortfolioPage() {
       >
         <Container maxWidth="lg">
           <Stack spacing={2}>
+            <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+              <Tooltip title={darkMode ? "Switch to light mode" : "Switch to dark mode"}>
+                <IconButton
+                  onClick={() => setDarkMode((prev) => !prev)}
+                  aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+                  size="small"
+                  sx={{
+                    border: 1,
+                    borderColor: "divider",
+                    bgcolor: "background.paper",
+                  }}
+                >
+                  {darkMode ? <LightModeRoundedIcon /> : <DarkModeRoundedIcon />}
+                </IconButton>
+              </Tooltip>
+            </Box>
+
             <Paper
               component="section"
               aria-labelledby="hero-heading"
@@ -284,16 +303,6 @@ export default function PortfolioPage() {
                 </Box>
 
                 <Stack spacing={1} sx={{ minWidth: { md: 270 } }}>
-                  <Button
-                    variant="outlined"
-                    onClick={() => setDarkMode((prev) => !prev)}
-                    startIcon={
-                      darkMode ? <LightModeRoundedIcon /> : <DarkModeRoundedIcon />
-                    }
-                  >
-                    {darkMode ? "Light Mode" : "Dark Mode"}
-                  </Button>
-
                   <Paper component="section" variant="outlined" sx={{ p: 1.4, borderRadius: 1 }}>
                     <Typography
                       component="h2"
