@@ -30,6 +30,7 @@ const profile = {
   github: "https://github.com/matiasmorenog",
   linkedin: "https://www.linkedin.com/in/matias-moreno/",
   resumePdf: "/MatiasMoreno_resume.pdf",
+  profilePhoto: "/profile-photo.jpg",
 };
 
 const profileSummary = [
@@ -199,6 +200,8 @@ export default function PortfolioPage() {
                     alignItems={{ xs: "flex-start", sm: "center" }}
                   >
                     <Avatar
+                      src={profile.profilePhoto}
+                      alt={`${profile.name} profile photo`}
                       sx={{
                         width: 52,
                         height: 52,
