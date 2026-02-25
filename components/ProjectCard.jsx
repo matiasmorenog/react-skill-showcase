@@ -51,6 +51,10 @@ export default function ProjectCard({ project }) {
           Focus: {project.impact}
         </Typography>
 
+        <Typography variant="caption" color="text.secondary" sx={{ mt: 0.8, display: "block" }}>
+          {project.usage}
+        </Typography>
+
         <Stack direction="row" spacing={0.8} useFlexGap flexWrap="wrap" sx={{ mt: 1.4 }}>
           {project.stack.map((tech) => (
             <Chip key={tech} label={tech} size="small" variant="outlined" />

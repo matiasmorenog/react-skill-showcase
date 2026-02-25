@@ -6,7 +6,7 @@ export const projects = [
     stack: ["React", "Vite", "Charts"],
     level: "Advanced",
     score: 92,
-    scoreLabel: "Portfolio project score",
+    scoreLabel: "Self-assessment",
     status: "Live",
     demoUrl: "https://mmoreno-ecommerce-analytics.vercel.app/",
     repoUrl: "https://github.com/matiasmorenog/ecommerce-analytics",
@@ -15,6 +15,7 @@ export const projects = [
       "Interactive KPI dashboard with reusable widgets and advanced filtering for sales monitoring.",
     impact:
       "Portfolio demo focused on reusable widgets, filtering, and dashboard UI architecture.",
+    usage: "Portfolio demo (not in active production use).",
   },
   {
     id: 2,
@@ -23,7 +24,7 @@ export const projects = [
     stack: ["React", "Hooks", "LocalStorage"],
     level: "Intermediate",
     score: 84,
-    scoreLabel: "Portfolio project score",
+    scoreLabel: "Self-assessment",
     status: "Live",
     demoUrl: "https://taskflow-pro-mmoreno.vercel.app/",
     repoUrl: "https://github.com/matiasmorenog/taskflow-pro",
@@ -32,6 +33,7 @@ export const projects = [
       "Task management interface with status filters, priority handling, and local persistence.",
     impact:
       "Portfolio demo focused on CRUD flows, local persistence, and clean state management.",
+    usage: "Portfolio demo (not in active production use).",
   },
 ];
 

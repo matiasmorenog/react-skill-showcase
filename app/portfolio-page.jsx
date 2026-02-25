@@ -29,7 +29,6 @@ const profile = {
   email: "matiasmorenog@gmail.com",
   github: "https://github.com/matiasmorenog",
   linkedin: "https://www.linkedin.com/in/matias-moreno/",
-  resumeSource: "https://www.linkedin.com/in/matias-moreno/",
   resumePdf: "/MatiasMoreno_resume.pdf",
 };
 
