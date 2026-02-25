@@ -27,7 +27,7 @@ const profile = {
   name: "Matias Adrian Moreno Gallo",
   role: "Frontend Developer specialized in React",
   tagline:
-    "I build React products for business-critical environments with maintainable architecture, strong performance, and reliable REST API integrations.",
+    "I build React interfaces with maintainable component architecture, solid JavaScript foundations, and reliable REST API integrations.",
   location: "Argentina - Open to remote work",
   email: "matiasmorenog@gmail.com",
   github: "https://github.com/matiasmorenog",
@@ -86,9 +86,9 @@ const coreSkills = [
 ];
 
 const credibilityChips = [
-  "10+ years shipping web products",
-  "Banking frontend at Santander",
-  "React architecture and performance",
+  "10+ years in software development",
+  "Experience across 4 product teams",
+  "React, JavaScript, and REST APIs",
 ];
 
 export default function PortfolioPage() {
