@@ -138,6 +138,11 @@ export default function PortfolioPage() {
                 borderRadius: 8,
                 textTransform: "none",
                 fontWeight: 600,
+                "&.Mui-focusVisible": {
+                  outline: "2px solid",
+                  outlineColor: darkMode ? "#7de2db" : "#0a7f78",
+                  outlineOffset: 2,
+                },
               },
             },
           },
@@ -145,6 +150,20 @@ export default function PortfolioPage() {
             styleOverrides: {
               root: {
                 borderRadius: 8,
+                "&.Mui-focusVisible": {
+                  outline: "2px solid",
+                  outlineColor: darkMode ? "#7de2db" : "#0a7f78",
+                  outlineOffset: 2,
+                },
+              },
+            },
+          },
+          MuiOutlinedInput: {
+            styleOverrides: {
+              root: {
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  borderWidth: 2,
+                },
               },
             },
           },
