@@ -1,7 +1,7 @@
 import { act, renderHook } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { projects } from "../data/projects";
-import { useProjectFilters } from "./useProjectFilters";
+import { projects } from "../../data/projects";
+import { useProjectFilters } from "../../hooks/useProjectFilters";
 
 describe("useProjectFilters", () => {
   it("returns all projects by default", () => {
@@ -18,24 +18,24 @@ describe("useProjectFilters", () => {
     const { result } = renderHook(() => useProjectFilters(projects));
 
     act(() => {
-      result.current.setQuery("crypto");
+      result.current.setQuery("analytics");
     });
 
     expect(result.current.filteredProjects).toHaveLength(1);
-    expect(result.current.filteredProjects[0].title).toBe("Crypto Monitor");
+    expect(result.current.filteredProjects[0].title).toBe("E-commerce Analytics");
   });
 
   it("applies combined filters and resets to defaults", () => {
     const { result } = renderHook(() => useProjectFilters(projects));
 
     act(() => {
-      result.current.setCategory("Data");
+      result.current.setCategory("Dashboard");
       result.current.setLevel("Advanced");
-      result.current.setStatus("Prototype");
+      result.current.setStatus("Live");
     });
 
     expect(result.current.filteredProjects).toHaveLength(1);
-    expect(result.current.filteredProjects[0].title).toBe("Crypto Monitor");
+    expect(result.current.filteredProjects[0].title).toBe("E-commerce Analytics");
 
     act(() => {
       result.current.resetFilters();

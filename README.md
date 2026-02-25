@@ -1,8 +1,8 @@
-# React Skill Showcase
+# Next Skill Showcase
 
 [![CI](https://github.com/matiasmorenog/react-skill-showcase/actions/workflows/ci.yml/badge.svg)](https://github.com/matiasmorenog/react-skill-showcase/actions/workflows/ci.yml)
 
-Portfolio project built with React + Material UI to showcase frontend skills, component architecture, filtering logic, testing, and CI best practices.
+Portfolio project built with Next.js + Material UI to showcase frontend skills, component architecture, filtering logic, testing, and CI best practices.
 
 ## Live Demo
 
@@ -10,8 +10,8 @@ Portfolio project built with React + Material UI to showcase frontend skills, co
 
 ## Tech Stack
 
+- Next.js
 - React 18
-- Vite
 - Material UI (MUI)
 - Vitest + Testing Library
 - GitHub Actions
@@ -28,7 +28,8 @@ Portfolio project built with React + Material UI to showcase frontend skills, co
 
 - `npm run dev` - Start development server
 - `npm run build` - Build production bundle
-- `npm run preview` - Preview production build
+- `npm run start` - Run production server
+- `npm run preview` - Alias of `npm run start`
 - `npm test` - Run tests once
 - `npm run test:watch` - Run tests in watch mode
 

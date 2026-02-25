@@ -1,4 +1,6 @@
-import { useMemo, useState } from "react";
+"use client";
+
+import React, { useMemo, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
@@ -12,11 +14,10 @@ import Divider from "@mui/material/Divider";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
-import Filters from "./components/Filters";
-import ProjectCard from "./components/ProjectCard";
-import StatCard from "./components/StatCard";
-import { categories, levels, projects, statusOptions } from "./data/projects";
-import { useProjectFilters } from "./hooks/useProjectFilters";
+import Filters from "@/components/Filters";
+import ProjectCard from "@/components/ProjectCard";
+import { categories, levels, projects, statusOptions } from "@/data/projects";
+import { useProjectFilters } from "@/hooks/useProjectFilters";
 
 const profile = {
   name: "Matias Adrian Moreno Gallo",
@@ -65,16 +66,15 @@ const educationHighlights = [
 
 const coreSkills = [
   "React",
-  "Material UI",
-  "JavaScript",
+  "Vue",
+  "Web Performance",
+  "TypeScript",
   "REST APIs",
   "Component Architecture",
-  "Accessibility",
   "Responsive Design",
-  "Web Performance",
 ];
 
-export default function App() {
+export default function PortfolioPage() {
   const [darkMode, setDarkMode] = useState(true);
 
   const theme = useMemo(
@@ -365,6 +365,54 @@ export default function App() {
                   Open CV on LinkedIn
                 </Button>
               </Paper>
+            </Box>
+
+            <Box
+              sx={{
+                display: "grid",
+                gap: 1,
+                gridTemplateColumns: {
+                  xs: "repeat(2, minmax(0, 1fr))",
+                  md: "repeat(3, minmax(0, 1fr))",
+                },
+              }}
+            >
+              <Box>
+                <Typography
+                  variant="caption"
+                  color="text.secondary"
+                  sx={{ fontWeight: 600 }}
+                >
+                  Total Projects
+                </Typography>
+                <Typography variant="h5" sx={{ fontWeight: 700 }}>
+                  {stats.total}
+                </Typography>
+              </Box>
+              <Box>
+                <Typography
+                  variant="caption"
+                  color="text.secondary"
+                  sx={{ fontWeight: 600 }}
+                >
+                  Live Projects
+                </Typography>
+                <Typography variant="h5" sx={{ fontWeight: 700 }}>
+                  {stats.live}
+                </Typography>
+              </Box>
+              <Box>
+                <Typography
+                  variant="caption"
+                  color="text.secondary"
+                  sx={{ fontWeight: 600 }}
+                >
+                  Avg Score
+                </Typography>
+                <Typography variant="h5" sx={{ fontWeight: 700 }}>
+                  {stats.avgScore}
+                </Typography>
+              </Box>
             </Box>
 
             <Filters
