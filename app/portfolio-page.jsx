@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
+import Avatar from "@mui/material/Avatar";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
@@ -72,6 +73,12 @@ const coreSkills = [
   "REST APIs",
   "Component Architecture",
   "Responsive Design",
+];
+
+const credibilityChips = [
+  "10+ years shipping web products",
+  "Banking frontend at Santander",
+  "React architecture and performance",
 ];
 
 export default function PortfolioPage() {
@@ -186,19 +193,38 @@ export default function PortfolioPage() {
                 justifyContent="space-between"
               >
                 <Box sx={{ maxWidth: 820 }}>
-                  <Typography
-                    variant="overline"
-                    color="primary.main"
-                    sx={{ fontWeight: 700, letterSpacing: 1.4 }}
+                  <Stack
+                    direction={{ xs: "column", sm: "row" }}
+                    spacing={1.2}
+                    alignItems={{ xs: "flex-start", sm: "center" }}
                   >
-                    React Portfolio Hub
-                  </Typography>
-                  <Typography
-                    variant="h3"
-                    sx={{ mt: 0.6, fontSize: { xs: "1.8rem", md: "2.6rem" } }}
-                  >
-                    {profile.name}
-                  </Typography>
+                    <Avatar
+                      sx={{
+                        width: 52,
+                        height: 52,
+                        bgcolor: "primary.main",
+                        color: "#fff",
+                        fontWeight: 700,
+                      }}
+                    >
+                      MM
+                    </Avatar>
+                    <Box>
+                      <Typography
+                        variant="overline"
+                        color="primary.main"
+                        sx={{ fontWeight: 700, letterSpacing: 1.4 }}
+                      >
+                        React Portfolio Hub
+                      </Typography>
+                      <Typography
+                        variant="h3"
+                        sx={{ mt: 0.2, fontSize: { xs: "1.8rem", md: "2.6rem" } }}
+                      >
+                        {profile.name}
+                      </Typography>
+                    </Box>
+                  </Stack>
                   <Typography variant="h6" color="text.secondary" sx={{ mt: 0.4 }}>
                     {profile.role}
                   </Typography>
@@ -230,7 +256,52 @@ export default function PortfolioPage() {
                     spacing={1}
                     useFlexGap
                     flexWrap="wrap"
+                    sx={{ mt: 1.4 }}
+                  >
+                    {credibilityChips.map((chip) => (
+                      <Chip key={chip} size="small" variant="outlined" label={chip} />
+                    ))}
+                  </Stack>
+
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    useFlexGap
+                    flexWrap="wrap"
                     sx={{ mt: 1.5 }}
+                  >
+                    <Button
+                      size="small"
+                      variant="contained"
+                      component="a"
+                      href="#projects"
+                    >
+                      View Projects
+                    </Button>
+                    <Button
+                      size="small"
+                      variant="outlined"
+                      component="a"
+                      href={`mailto:${profile.email}`}
+                    >
+                      Contact Me
+                    </Button>
+                    <Button
+                      size="small"
+                      variant="outlined"
+                      component="a"
+                      href={`mailto:${profile.email}`}
+                    >
+                      {profile.email}
+                    </Button>
+                  </Stack>
+
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    useFlexGap
+                    flexWrap="wrap"
+                    sx={{ mt: 1 }}
                   >
                     <Button
                       size="small"
@@ -256,16 +327,8 @@ export default function PortfolioPage() {
                       size="small"
                       variant="outlined"
                       component="a"
-                      href={`mailto:${profile.email}`}
-                    >
-                      Contact
-                    </Button>
-                    <Button
-                      size="small"
-                      variant="contained"
-                      endIcon={<OpenInNewRoundedIcon fontSize="small" />}
-                      component="a"
                       href={profile.resumeSource}
+                      endIcon={<OpenInNewRoundedIcon fontSize="small" />}
                       target="_blank"
                       rel="noreferrer"
                     >
