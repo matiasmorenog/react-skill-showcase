@@ -1,0 +1,25 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#152238"/>
+      <stop offset="1" stop-color="#243B55"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+  <rect x="40" y="40" width="1120" height="70" rx="12" fill="#314E68"/>
+  <rect x="70" y="62" width="240" height="26" rx="8" fill="#466987"/>
+  <rect x="340" y="62" width="140" height="26" rx="8" fill="#3B5E79"/>
+  <rect x="510" y="62" width="140" height="26" rx="8" fill="#3B5E79"/>
+  <rect x="680" y="62" width="140" height="26" rx="8" fill="#3B5E79"/>
+  <rect x="40" y="150" width="350" height="440" rx="16" fill="#21364A"/>
+  <rect x="425" y="150" width="350" height="440" rx="16" fill="#21364A"/>
+  <rect x="810" y="150" width="350" height="440" rx="16" fill="#21364A"/>
+  <rect x="70" y="190" width="290" height="90" rx="12" fill="#3A5B78"/>
+  <rect x="70" y="300" width="290" height="90" rx="12" fill="#3A5B78"/>
+  <rect x="70" y="410" width="290" height="90" rx="12" fill="#3A5B78"/>
+  <rect x="455" y="190" width="290" height="110" rx="12" fill="#3A5B78"/>
+  <rect x="455" y="320" width="290" height="110" rx="12" fill="#3A5B78"/>
+  <rect x="840" y="190" width="290" height="120" rx="12" fill="#3A5B78"/>
+  <rect x="840" y="330" width="290" height="120" rx="12" fill="#3A5B78"/>
+  <text x="65" y="615" fill="#BFD2E4" font-size="28" font-family="Arial, sans-serif">TaskFlow Pro • Kanban Board Preview</text>
+</svg>

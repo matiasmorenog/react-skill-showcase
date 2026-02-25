@@ -17,6 +17,21 @@ const statusColorMap = {
 export default function ProjectCard({ project }) {
   return (
     <Card variant="outlined" sx={{ borderRadius: 1, height: "100%" }}>
+      {project.previewImage ? (
+        <Box
+          component="img"
+          src={project.previewImage}
+          alt={project.previewAlt ?? `${project.title} preview`}
+          sx={{
+            width: "100%",
+            height: 150,
+            objectFit: "cover",
+            borderBottom: 1,
+            borderColor: "divider",
+            display: "block",
+          }}
+        />
+      ) : null}
       <CardContent sx={{ pb: 1.2 }}>
         <Stack
           direction="row"
