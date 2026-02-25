@@ -10,7 +10,7 @@ export const projects = [
     status: "Live",
     demoUrl: "https://mmoreno-ecommerce-analytics.vercel.app/",
     repoUrl: "https://github.com/matiasmorenog/ecommerce-analytics",
-    role: "Solo developer (portfolio demo)",
+    role: "Individual contributor (portfolio demo)",
     summary:
       "Interactive KPI dashboard with reusable widgets and advanced filtering for sales monitoring.",
     impact:
@@ -27,7 +27,7 @@ export const projects = [
     status: "Live",
     demoUrl: "https://taskflow-pro-mmoreno.vercel.app/",
     repoUrl: "https://github.com/matiasmorenog/taskflow-pro",
-    role: "Solo developer (portfolio demo)",
+    role: "Individual contributor (portfolio demo)",
     summary:
       "Task management interface with status filters, priority handling, and local persistence.",
     impact:
