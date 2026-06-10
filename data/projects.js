@@ -40,7 +40,3 @@ export const projects = [
     usage: "Portfolio demo (not in active production use).",
   },
 ];
-
-export const categories = ["All", ...new Set(projects.map((item) => item.category))];
-export const levels = ["All", "Intermediate", "Advanced"];
-export const statusOptions = ["All", "Live", "Prototype", "Archived"];

@@ -17,15 +17,13 @@ import Tooltip from "@mui/material/Tooltip";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
-import Filters from "@/components/Filters";
 import ProjectCard from "@/components/ProjectCard";
-import { categories, levels, projects, statusOptions } from "@/data/projects";
-import { useProjectFilters } from "@/hooks/useProjectFilters";
+import { projects } from "@/data/projects";
 import { createPortfolioTheme } from "@/app/theme";
 
 const profile = {
-  name: "Matias Adrian Moreno Gallo",
-  role: "Frontend Developer specialized in React",
+  name: "Matias Moreno",
+  role: "Senior Frontend Engineer — React & TypeScript",
   tagline:
     "I build React interfaces with maintainable component architecture, solid JavaScript foundations, and reliable REST API integrations.",
   location: "Argentina - Open to remote work",
@@ -37,10 +35,7 @@ const profile = {
 };
 
 const profileSummary = [
-  "Frontend Developer with 10+ years in software development.",
-  "Professional experience across 4 companies: INE, Santander Tecnologia Argentina, Genetrics, and Envone.",
-  "Focused on React, JavaScript, REST API integrations, component architecture, and responsive UI development.",
-  "Open to remote opportunities.",
+  "Senior Frontend Engineer with experience building complex web applications high-demand environments. Focused on scalable React architecture, performance optimization, and maintainable codebases. Strong collaboration with backend and product teams in large-scale systems.",
 ];
 
 const experienceHighlights = [
@@ -96,19 +91,6 @@ export default function PortfolioPage() {
 
   const theme = useMemo(() => createPortfolioTheme(darkMode), [darkMode]);
 
-  const {
-    query,
-    setQuery,
-    category,
-    setCategory,
-    level,
-    setLevel,
-    status,
-    setStatus,
-    resetFilters,
-    filteredProjects,
-  } = useProjectFilters(projects);
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -148,12 +130,15 @@ export default function PortfolioPage() {
               variant="outlined"
               sx={{ p: { xs: 2, md: 2.5 }, borderRadius: 1 }}
             >
-              <Stack
-                direction={{ xs: "column", md: "row" }}
-                spacing={2}
-                justifyContent="space-between"
+              <Box
+                sx={{
+                  display: "grid",
+                  gap: 2,
+                  gridTemplateColumns: { xs: "1fr", md: "1.6fr 1fr" },
+                  alignItems: "start",
+                }}
               >
-                <Box sx={{ maxWidth: 820 }}>
+                <Box>
                   <Stack
                     direction={{ xs: "column", sm: "row" }}
                     spacing={1.2}
@@ -163,8 +148,8 @@ export default function PortfolioPage() {
                       src={profile.profilePhoto}
                       alt={`${profile.name} profile photo`}
                       sx={{
-                        width: 52,
-                        height: 52,
+                        width: 120,
+                        height: 120,
                         bgcolor: "primary.main",
                         color: "#fff",
                         fontWeight: 700,
@@ -251,59 +236,11 @@ export default function PortfolioPage() {
                     >
                       Contact Me
                     </Button>
-                    <Button
-                      size="small"
-                      variant="outlined"
-                      component="a"
-                      href={`mailto:${profile.email}`}
-                    >
-                      {profile.email}
-                    </Button>
-                  </Stack>
-
-                  <Stack
-                    direction="row"
-                    spacing={1}
-                    useFlexGap
-                    flexWrap="wrap"
-                    sx={{ mt: 1 }}
-                  >
-                    <Button
-                      size="small"
-                      variant="outlined"
-                      component="a"
-                      href={profile.github}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      GitHub
-                    </Button>
-                    <Button
-                      size="small"
-                      variant="outlined"
-                      component="a"
-                      href={profile.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      LinkedIn
-                    </Button>
-                    <Button
-                      size="small"
-                      variant="outlined"
-                      component="a"
-                      href={profile.resumePdf}
-                      endIcon={<OpenInNewRoundedIcon fontSize="small" />}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Download CV (PDF)
-                    </Button>
                   </Stack>
                 </Box>
 
-                <Stack spacing={1} sx={{ minWidth: { md: 270 } }}>
-                  <Paper component="section" variant="outlined" sx={{ p: 1.4, borderRadius: 1 }}>
+                <Stack spacing={1}>
+                  <Paper variant="outlined" sx={{ p: 1.4, borderRadius: 1 }}>
                     <Typography
                       component="h2"
                       variant="subtitle2"
@@ -322,11 +259,60 @@ export default function PortfolioPage() {
                       </Typography>
                     ))}
                   </Paper>
+
+                  <Paper variant="outlined" sx={{ p: 1.4, borderRadius: 1 }}>
+                    <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+                      Quick Links
+                    </Typography>
+                    <Stack
+                      direction="row"
+                      spacing={1}
+                      useFlexGap
+                      flexWrap="wrap"
+                      sx={{ mt: 1 }}
+                    >
+                      <Button
+                        size="small"
+                        variant="outlined"
+                        component="a"
+                        href={profile.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        LinkedIn
+                      </Button>
+                      <Button
+                        size="small"
+                        variant="outlined"
+                        component="a"
+                        href={profile.github}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        GitHub
+                      </Button>
+                      <Button
+                        size="small"
+                        variant="outlined"
+                        component="a"
+                        href={profile.resumePdf}
+                        endIcon={<OpenInNewRoundedIcon fontSize="small" />}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Download CV
+                      </Button>
+                    </Stack>
+                  </Paper>
                 </Stack>
-              </Stack>
+              </Box>
             </Paper>
 
-            <Paper component="section" variant="outlined" sx={{ p: 1.5, borderRadius: 1 }}>
+            <Paper
+              component="section"
+              variant="outlined"
+              sx={{ p: 1.5, borderRadius: 1 }}
+            >
               <Typography component="h2" variant="h6" sx={{ mb: 1 }}>
                 Core Skills
               </Typography>
@@ -347,7 +333,12 @@ export default function PortfolioPage() {
               }}
             >
               <Paper variant="outlined" sx={{ p: 2, borderRadius: 1 }}>
-                <Typography id="experience-heading" component="h2" variant="h6" sx={{ mb: 1 }}>
+                <Typography
+                  id="experience-heading"
+                  component="h2"
+                  variant="h6"
+                  sx={{ mb: 1 }}
+                >
                   Experience Highlights
                 </Typography>
                 {experienceHighlights.map((item, index) => (
@@ -395,23 +386,14 @@ export default function PortfolioPage() {
             </Box>
 
             <Box component="section" aria-labelledby="projects-heading">
-              <Typography id="projects-heading" component="h2" variant="h6" sx={{ mb: 1 }}>
-                Projects
+              <Typography
+                id="projects-heading"
+                component="h2"
+                variant="h6"
+                sx={{ mb: 1 }}
+              >
+                Live demo projects
               </Typography>
-              <Filters
-                query={query}
-                setQuery={setQuery}
-                category={category}
-                setCategory={setCategory}
-                level={level}
-                setLevel={setLevel}
-                status={status}
-                setStatus={setStatus}
-                categories={categories}
-                levels={levels}
-                statusOptions={statusOptions}
-                onReset={resetFilters}
-              />
             </Box>
 
             <Box
@@ -428,18 +410,9 @@ export default function PortfolioPage() {
                 },
               }}
             >
-              {filteredProjects.length > 0 ? (
-                filteredProjects.map((project) => (
-                  <ProjectCard key={project.id} project={project} />
-                ))
-              ) : (
-                <Paper variant="outlined" sx={{ p: 2, borderRadius: 1 }}>
-                  <Typography variant="h6">No results found</Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Try adjusting filters or clearing your search query.
-                  </Typography>
-                </Paper>
-              )}
+              {projects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
             </Box>
           </Stack>
         </Container>

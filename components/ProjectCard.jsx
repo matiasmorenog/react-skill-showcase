@@ -17,7 +17,10 @@ const statusColorMap = {
 
 export default function ProjectCard({ project }) {
   return (
-    <Card variant="outlined" sx={{ borderRadius: 1, height: "100%" }}>
+    <Card
+      variant="outlined"
+      sx={{ borderRadius: 1, height: "100%", display: "flex", flexDirection: "column" }}
+    >
       {project.previewImage ? (
         <Box
           sx={{
@@ -38,7 +41,7 @@ export default function ProjectCard({ project }) {
           />
         </Box>
       ) : null}
-      <CardContent sx={{ pb: 1.2 }}>
+      <CardContent sx={{ pb: 1.2, flexGrow: 1 }}>
         <Stack
           direction="row"
           justifyContent="space-between"
@@ -87,15 +90,16 @@ export default function ProjectCard({ project }) {
         sx={{
           px: 2,
           pb: 2,
-          pt: 0.6,
+          pt: 1.2,
           display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
+          flexDirection: "column",
+          alignItems: "stretch",
+          gap: 1,
           borderTop: 1,
           borderColor: "divider",
         }}
       >
-        <Box sx={{ display: "flex", gap: 1 }}>
+        <Stack direction={{ xs: "column", sm: "row" }} spacing={1} sx={{ width: "100%" }}>
           {project.demoUrl ? (
             <Button
               size="small"
@@ -104,11 +108,12 @@ export default function ProjectCard({ project }) {
               href={project.demoUrl}
               target="_blank"
               rel="noreferrer"
+              sx={{ flex: 1 }}
             >
               Live Demo
             </Button>
           ) : (
-            <Button size="small" variant="outlined" disabled>
+            <Button size="small" variant="outlined" disabled sx={{ flex: 1 }}>
               Demo Soon
             </Button>
           )}
@@ -121,13 +126,14 @@ export default function ProjectCard({ project }) {
               href={project.repoUrl}
               target="_blank"
               rel="noreferrer"
+              sx={{ flex: 1 }}
             >
               Source Code
             </Button>
           ) : null}
-        </Box>
+        </Stack>
 
-        <Typography variant="caption" color="text.secondary">
+        <Typography variant="caption" color="text.secondary" sx={{ alignSelf: "flex-end" }}>
           {project.category} • {project.scoreLabel ?? "Project score"}: {project.score}/100
         </Typography>
       </CardActions>
