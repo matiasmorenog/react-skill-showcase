@@ -2,33 +2,33 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 
 export const metadata = {
   metadataBase: new URL("https://react-skill-showcase.vercel.app"),
-  title: "Matias Moreno | React Frontend Developer",
+  title: "Matías Moreno | Senior Frontend Engineer — React & TypeScript",
   description:
-    "Frontend Developer specialized in React, JavaScript, UI architecture, and web performance. Experience in banking and product teams.",
+    "Senior Frontend Engineer specializing in React, TypeScript, and scalable UI systems. Experience in SaaS platforms, banking, healthcare, and B2B solutions.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Matias Moreno | React Frontend Developer",
+    title: "Matías Moreno | Senior Frontend Engineer — React & TypeScript",
     description:
-      "Portfolio focused on React frontend development, architecture, performance, and real project demos.",
+      "Portfolio focused on React, TypeScript, scalable frontend architecture, performance optimization, and real project demos.",
     url: "https://react-skill-showcase.vercel.app",
-    siteName: "Matias Moreno Portfolio",
+    siteName: "Matías Moreno Portfolio",
     type: "website",
     images: [
       {
         url: "/og",
         width: 1200,
         height: 630,
-        alt: "Matias Moreno - React Frontend Developer portfolio",
+        alt: "Matías Moreno — Senior Frontend Engineer portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Matias Moreno | React Frontend Developer",
+    title: "Matías Moreno | Senior Frontend Engineer — React & TypeScript",
     description:
-      "Portfolio focused on React frontend development, architecture, performance, and real project demos.",
+      "Portfolio focused on React, TypeScript, scalable frontend architecture, performance optimization, and real project demos.",
     images: ["/og"],
   },
 };

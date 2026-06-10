@@ -4,8 +4,8 @@ export default function Page() {
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Matias Adrian Moreno Gallo",
-    jobTitle: "Frontend Developer",
+    name: "Matías Moreno",
+    jobTitle: "Senior Frontend Engineer",
     url: "https://react-skill-showcase.vercel.app",
     email: "mailto:matiasmorenog@gmail.com",
     sameAs: [
@@ -14,14 +14,14 @@ export default function Page() {
     ],
     alumniOf: {
       "@type": "CollegeOrUniversity",
-      name: "Universidad Tecnologica Nacional (UTN)",
+      name: "Universidad Tecnológica Nacional (UTN)",
     },
   };
 
   const webSiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Matias Moreno Portfolio",
+    name: "Matías Moreno Portfolio",
     url: "https://react-skill-showcase.vercel.app",
     inLanguage: "en",
     author: {
