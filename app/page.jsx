@@ -1,5 +1,7 @@
 import PortfolioPage from "./portfolio-page";
 
+export const dynamic = "force-static";
+
 export default function Page() {
   const personJsonLd = {
     "@context": "https://schema.org",

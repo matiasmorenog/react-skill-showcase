@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
+export const revalidate = 31536000;
 export const size = {
   width: 1200,
   height: 630,
@@ -50,6 +51,11 @@ export function GET() {
         </div>
       </div>
     ),
-    { ...size }
+    {
+      ...size,
+      headers: {
+        "Cache-Control": "public, max-age=31536000, immutable",
+      },
+    },
   );
 }
