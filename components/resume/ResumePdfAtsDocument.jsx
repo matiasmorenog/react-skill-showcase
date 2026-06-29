@@ -77,22 +77,12 @@ const styles = StyleSheet.create({
     fontFamily: "Helvetica-Bold",
     flexShrink: 0,
   },
-  bulletRow: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-    marginBottom: 2,
-  },
-  bulletDot: {
-    width: 10,
-    fontSize: 10,
-    lineHeight: 1.45,
-  },
   bulletText: {
-    flex: 1,
     fontSize: 9.5,
     lineHeight: 1.45,
     color: "#333333",
     textAlign: "justify",
+    marginBottom: 4,
   },
   skillLine: {
     fontSize: 9.5,
@@ -111,14 +101,9 @@ const styles = StyleSheet.create({
 
 function BulletList({ items }) {
   return (
-    <>
-      {items.map((item) => (
-        <View key={item} style={styles.bulletRow}>
-          <Text style={styles.bulletDot}>•</Text>
-          <Text style={styles.bulletText}>{item}</Text>
-        </View>
-      ))}
-    </>
+    <Text style={styles.bulletText}>
+      {items.map((item) => `• ${item}`).join("\n")}
+    </Text>
   );
 }
 
@@ -162,11 +147,7 @@ export default function ResumePdfAtsDocument({ resume }) {
 
         <View style={styles.section}>
           <Text style={styles.sectionHeading}>{labels.professionalProfile}</Text>
-          {professionalProfile.map((paragraph) => (
-            <Text key={paragraph} style={styles.paragraph}>
-              {paragraph}
-            </Text>
-          ))}
+          <Text style={styles.paragraph}>{professionalProfile.join("\n\n")}</Text>
         </View>
 
         <View style={styles.section}>
@@ -196,38 +177,32 @@ export default function ResumePdfAtsDocument({ resume }) {
 
         <View style={styles.section}>
           <Text style={styles.sectionHeading}>{labels.softSkills}</Text>
-          {softSkills.map((item) => (
-            <Text key={item} style={styles.listItem}>
-              • {item}
-            </Text>
-          ))}
+          <Text style={styles.listItem}>
+            {softSkills.map((item) => `• ${item}`).join("\n")}
+          </Text>
         </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionHeading}>{labels.education}</Text>
-          {education.map((item) => (
-            <Text key={`${item.degree}-${item.institution}`} style={styles.listItem}>
-              {item.degree} | {item.institution} | {item.period}
-            </Text>
-          ))}
+          <Text style={styles.listItem}>
+            {education
+              .map((item) => `${item.degree} | ${item.institution} | ${item.period}`)
+              .join("\n")}
+          </Text>
         </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionHeading}>{labels.certifications}</Text>
-          {certifications.map((item) => (
-            <Text key={item} style={styles.listItem}>
-              • {item}
-            </Text>
-          ))}
+          <Text style={styles.listItem}>
+            {certifications.map((item) => `• ${item}`).join("\n")}
+          </Text>
         </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionHeading}>{labels.languages}</Text>
-          {languages.map((lang) => (
-            <Text key={lang.name} style={styles.listItem}>
-              {lang.name} — {lang.level}
-            </Text>
-          ))}
+          <Text style={styles.listItem}>
+            {languages.map((lang) => `${lang.name} — ${lang.level}`).join("\n")}
+          </Text>
         </View>
       </Page>
     </Document>
