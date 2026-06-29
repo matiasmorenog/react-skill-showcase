@@ -621,12 +621,8 @@ function PortfolioPageContent() {
               aria-labelledby="projects-heading"
               sx={{
                 display: "grid",
-                gap: 1,
-                gridTemplateColumns: {
-                  xs: "1fr",
-                  sm: "repeat(2, 1fr)",
-                  lg: "repeat(3, 1fr)",
-                },
+                gap: 1.5,
+                gridTemplateColumns: "1fr",
               }}
             >
               {projects.map((project) => (

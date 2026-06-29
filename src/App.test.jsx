@@ -7,8 +7,8 @@ describe("App", () => {
   it("renders project content", () => {
     render(<PortfolioPage />);
 
-    expect(screen.getByText("E-commerce Analytics")).toBeInTheDocument();
-    expect(screen.getByText("TaskFlow Pro")).toBeInTheDocument();
+    expect(screen.getByText("Nexus Web Store")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Live Demo" })).toBeInTheDocument();
   });
 
   it("renders quick links actions", () => {
